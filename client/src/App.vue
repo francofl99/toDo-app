@@ -1,44 +1,77 @@
 <template>
   <v-app>
+   
+    <InputToDo />
+
    <div class="d-flex justify-center">
-     <h1 id="addTodo"> 
-       Add ToDo
-     </h1>
+     <h1>Uncompleted ToDo</h1>
+   </div>
+
+   <div v-for="toDo in uncompletedToDos" :key="toDo._id">
+     <v-card class="mx-auto" color="white" dark max-width="800">
+       <v-card-text class="font-weight-bold title blue--text">
+         {{ toDo.title }}
+
+         <v-list-item id="todo-list-item" class="grow" >
+           <v-btn @click="completeToDo(toDo._id)" class="mx-2" small color="green">
+             Done
+           </v-btn>
+         </v-list-item >
+       </v-card-text>
+
+     </v-card>
 
    </div>
 
-   <div class="d-flex justify-center">
-     <v-col cols="6" style="margin: 0px auto;">
-       <v-text-field v-model="newToDo" label="Add Todo" solo></v-text-field >
-     </v-col>
-   </div>
-   <div class="d-flex justify-center">
-     <v-btn @click="addToDo()" color="prymary"> Add ToDo </v-btn>
+   <div v-for="toDo in completedToDos" :key="toDo._id">
+     <v-card class="mx-auto" color="blue" dark max-width="800">
+       <v-card-text class="font-weight-bold title white--text">
+         {{ toDo.title }}
+
+         <v-list-item id="todo-list-item" class="grow" >
+           <v-btn @click="deleteToDo(toDo._id)" class="mx-2" small color="red">
+             Delete
+           </v-btn>
+         </v-list-item >
+       </v-card-text>
+
+     </v-card>
 
    </div>
   </v-app>
 </template>
 
 <script>
-import axios from 'axios'
+import InputToDo from './components/InputToDo'
 
 export default {
   name: 'App',
 
-  data: () => ({
-    newToDo: '',
-  }),
+  computed: {
+    uncompletedToDos() {
+      return this.$store.getters.getUncompletedToDos
+    },
+    completedToDos() {
+      return this.$store.getters.getCompleteToDos
+    }
+  },
+
+  components: {
+    InputToDo
+  },
 
   methods: {
-    addToDo() {
-      axios.post('http://localhost:3000/todo/add', {
-        todo: this.newToDo
-      }).then( response => {
-        console.log(response.data)
-      })
+    getUncompletedToDos() {
+      this.$store.dispatch('getUncompletedToDos')
+    },
+    getCompletedToDos() {
+      this.$store.dispatch('getCompletedToDos')
     }
-  }
+  },
 
-  
+  created() {
+    this.getCompletedToDos();
+    this.getUncompletedToDos();
+  }
 };
 </script>

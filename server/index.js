@@ -55,7 +55,7 @@ app.get('/todo/completed', (req, res) => {
     })
 })
 
-app.get('/todo/uncomplete', (req, res) => {
+app.get('/todo/uncompleted', (req, res) => {
     todoModel.find({ completed: false }, (err, todos) => {
         if (err) {
             res.send("Error while fetching Todos")
