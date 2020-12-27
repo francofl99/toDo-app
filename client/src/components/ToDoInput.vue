@@ -21,7 +21,7 @@
 
 <script>
 export default {
-    name: 'InputToDo',
+    name: 'ToDoInput',
     
     data: () => ({
         newToDo: '',

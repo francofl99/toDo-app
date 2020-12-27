@@ -43,8 +43,8 @@ export default {
         })
       },
   
-      deleteToDo(context, todoToRemove) {
-        axios.delete("http://localhost:3000/todo/" + todoToRemove._id)
+      deleteToDo(context, toDoToDelete) {
+        axios.delete("http://localhost:3000/todo/" + toDoToDelete._id)
         .then(() => {
           context.dispatch('getCompletedToDos')
         })
