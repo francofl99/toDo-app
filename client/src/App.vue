@@ -1,23 +1,31 @@
 <template>
   <v-app>
-   
-    <ToDoInput />
 
-    <ToDoContainer />
+    <MainView>
+   
+      <ToDoContainer />
+      <v-btn fab bottom right dark elevation="2" fixed >
+
+      </v-btn>
+      <ToDoInput />
+
+    </MainView>
    
   </v-app>
 </template>
 
 <script>
-import ToDoInput from './components/ToDoInput'
+import MainView from './views/MainView'
 import ToDoContainer from './components/ToDoContainer'
+import ToDoInput from './components/ToDoInput'
 
 export default {
   name: 'App',
 
   components: {
-    ToDoInput,
-    ToDoContainer
+    MainView,
+    ToDoContainer,
+    ToDoInput
   },
 
 };
