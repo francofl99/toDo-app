@@ -1,32 +1,28 @@
 <template>
-  <v-app>
-
-    <MainView>
-   
-      <ToDoContainer />
-      <v-btn fab bottom right dark elevation="2" fixed >
-
-      </v-btn>
-      <ToDoInput />
-
-    </MainView>
-   
-  </v-app>
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  </div>
 </template>
 
 <script>
-import MainView from './views/MainView'
-import ToDoContainer from './components/ToDoContainer'
-import ToDoInput from './components/ToDoInput'
+import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-
   components: {
-    MainView,
-    ToDoContainer,
-    ToDoInput
-  },
-
-};
+    HelloWorld
+  }
+}
 </script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
