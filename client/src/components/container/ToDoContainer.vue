@@ -4,10 +4,10 @@
       uncompleteToDoContainerStyle: isToDoTypeUncompleted,
       completeToDoContainerStyle: !isToDoTypeUncompleted,
     }"
-    class=" rounded-md w-full bg-gray-700 grid grid-rows-5 h-full place-self-end overflow-y-auto px-4 "
+    class=" rounded-md w-full bg-gray-700 grid grid-rows-5 h-full place-self-end "
   >
     <div
-      class="items-center flex place-content-center font-bold text-gray-400 text-2xl  w-full "
+      class="items-center flex place-content-center font-bold text-gray-400 text-2xl w-full "
     >
       <h1 v-if="isToDoTypeUncompleted">
         Tareas no completadas
@@ -16,12 +16,10 @@
         Tareas completadas
       </h1>
     </div>
-    <div
-      class="flex flex-col row-span-4 "
-      v-for="toDo in getToDoType()"
-      :key="toDo._id"
-    >
-      <ToDoCard :toDo="toDo" />
+    <div class="flex flex-col row-span-4 overflow-y-auto px-4">
+      <div v-for="toDo in getToDoType()" :key="toDo._id">
+        <ToDoCard :toDo="toDo" />
+      </div>
     </div>
   </div>
 </template>
@@ -85,6 +83,4 @@ export default {
 .completeToDoContainerStyle {
   @apply row-span-3;
 }
-
-
 </style>
