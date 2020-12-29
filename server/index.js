@@ -3,18 +3,19 @@ const cors = require('cors')
 const app = express();
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const todoModel = require('./todo_schema') 
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors())
 
 mongoose.connect("mongodb://localhost:27017/todoapp", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 });
 
 app.listen(3000, () => {
- console.log("Server started on port 3000")
+    console.log("Server started on port 3000")
 })
 
 var db = mongoose.connection;
@@ -26,8 +27,6 @@ db.on('open', () => {
 db.on('error', (error) => {
     console.log(error)
 });
-
-let todoModel = require('./todo_schema')
 
 app.post('/todo/add', (req, res) => {
     let newTODO = new todoModel;
