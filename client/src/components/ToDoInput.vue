@@ -1,6 +1,6 @@
 <template>
   <div
-    class=" bg-gray-700 rounded-md w-full h-full row-span-1 grid grid-rows-3 p-2"
+    class=" bg-gray-700 rounded-md w-full h-full row-span-1 grid grid-rows-3 p-4 "
   >
     <label
       for="inputToDo"

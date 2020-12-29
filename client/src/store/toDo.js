@@ -28,11 +28,11 @@ export default {
       addToDo(context, toDoToAdd) {
         axios.post('http://localhost:3000/todo/add', {
           todo: toDoToAdd
-        }).then( response => {
-          console.log(response.data)
         })
-  
-        context.dispatch('getUncompletedToDos')
+        .then( () => {
+          context.dispatch('getUncompletedToDos')
+        })
+        .catch(error => console.log(error))
       },
   
       completeToDo(context, toDoToComplete) {
@@ -41,6 +41,7 @@ export default {
           context.dispatch('getUncompletedToDos')
           context.dispatch('getCompletedToDos')
         })
+        .catch(error => console.log(error))
       },
   
       deleteToDo(context, toDoToDelete) {
@@ -48,6 +49,7 @@ export default {
         .then(() => {
           context.dispatch('getCompletedToDos')
         })
+        .catch(error => console.log(error))
       },
   
       getUncompletedToDos(context) {
