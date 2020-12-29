@@ -1,7 +1,9 @@
 <template>
 
   <MainView>
-    <ToDoContainer/>
+    <ToDoInput />
+    <UncompleteToDoContainer/>
+    <CompletedToDoContainer />
   </MainView>
 
   
@@ -9,12 +11,16 @@
 
 <script>
 import MainView from './views/MainView'
-import ToDoContainer from './components/ToDoContainer'
+import ToDoInput from './components/ToDoInput'
+import UncompleteToDoContainer from './components/UncompleteToDoContainer'
+import CompletedToDoContainer from './components/CompletedToDoContainer'
 
 export default {
   components: {
     MainView,
-    ToDoContainer
+    ToDoInput,
+    UncompleteToDoContainer,
+    CompletedToDoContainer
   }
 
 }
