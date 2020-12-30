@@ -1,22 +1,20 @@
 <template>
   <div
     :class="{
-      uncompleteToDoContainerStyle: isToDoTypeUncompleted,
-      completeToDoContainerStyle: !isToDoTypeUncompleted,
+      containerForUncompleteToDos: !isToDoCompleted,
+      containerForCompleteToDos: isToDoCompleted,
     }"
-    class=" rounded-md w-full bg-gray-700 grid grid-rows-5 h-full place-self-end "
+    class="container"
   >
-    <div
-      class="items-center flex place-content-center font-bold text-gray-400 text-2xl w-full "
-    >
-      <h1 v-if="isToDoTypeUncompleted">
+    <div class="container-header">
+      <h1 v-if="isToDoCompleted">
         Tareas no completadas
       </h1>
       <h1 v-else>
         Tareas completadas
       </h1>
     </div>
-    <div class="flex flex-col row-span-4 overflow-y-auto px-4 scrollbar">
+    <div class="container-body">
       <div v-for="toDo in getToDoType()" :key="toDo._id">
         <ToDoCard :toDo="toDo" />
       </div>
@@ -35,8 +33,8 @@ export default {
     completedToDos() {
       return this.$store.getters.getCompleteToDos;
     },
-    isToDoTypeUncompleted() {
-      return this.toDoType == "uncompleted";
+    isToDoCompleted() {
+      return this.toDoType == "completed";
     },
   },
 
@@ -53,9 +51,7 @@ export default {
 
   methods: {
     getToDoType() {
-      return this.isToDoTypeUncompleted
-        ? this.uncompletedToDos
-        : this.completedToDos;
+      return this.isToDoCompleted ? this.completedToDos : this.uncompletedToDos;
     },
     getCompletedToDos() {
       this.$store.dispatch("getCompletedToDos");
@@ -66,21 +62,31 @@ export default {
   },
 
   created() {
-    if (this.isToDoTypeUncompleted) {
-      this.getUncompletedToDos();
-    } else {
-      this.getCompletedToDos();
-    }
+    this.isToDoCompleted
+      ? this.getCompletedToDos()
+      : this.getUncompletedToDos();
   },
 };
 </script>
 
 <style lang="postcss">
-.uncompleteToDoContainerStyle {
+.containerForUncompleteToDos {
   @apply row-span-2;
 }
 
-.completeToDoContainerStyle {
+.containerForCompleteToDos {
   @apply row-span-3;
+}
+
+.container {
+  @apply rounded-md w-full bg-gray-700 grid grid-rows-5 h-full place-self-end;
+}
+
+.container-header {
+  @apply items-center flex place-content-center font-bold text-gray-400 text-2xl w-full;
+}
+
+.container-body {
+  @apply flex flex-col row-span-4 overflow-y-auto px-4 scrollbar;
 }
 </style>
