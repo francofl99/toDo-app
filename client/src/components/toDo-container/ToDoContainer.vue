@@ -7,18 +7,18 @@
     class="container"
   >
 
-    <ContainerHeader :isToDoCompleted="isToDoCompleted" />
-    <ContainerBody :isToDoCompleted="isToDoCompleted" />
+    <ToDoContainerHeader :isToDoCompleted="isToDoCompleted" />
+    <ToDoContainerBody :isToDoCompleted="isToDoCompleted" />
     
   </div>
 </template>
 
 <script>
-import ContainerHeader from './ContainerHeader'
-import ContainerBody from './ContainerBody'
+import ToDoContainerHeader from './ToDoContainerHeader'
+import ToDoContainerBody from './ToDoContainerBody'
 
 export default {
-  name: 'Container',
+  name: 'ToDoContainer',
   
   computed: {
     isToDoCompleted() {
@@ -34,8 +34,8 @@ export default {
   },
 
   components: {
-    ContainerHeader,
-    ContainerBody
+    ToDoContainerHeader,
+    ToDoContainerBody
   },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-1/2 flex flex-row-reverse">
-    <div v-if="isToDoTypeCompleted">
+    <div v-if="isToDoCompleted">
       <ButtonsLogic
         @click.native="emmitClick('deleteButton')"
         :name="'delete'"
@@ -19,10 +19,10 @@
 import ButtonsLogic from "../ButtonsLogic";
 
 export default {
-  name: "Buttons",
+  name: "ToDoCardButton",
 
   props: {
-    isToDoTypeCompleted: {
+    isToDoCompleted: {
       type: Boolean,
       required: true,
     },

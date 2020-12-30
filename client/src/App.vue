@@ -2,8 +2,8 @@
 
   <MainView>
     <ToDoInput />
-    <Container :toDoType=" 'uncompleted'  " />
-    <Container :toDoType=" 'completed'  " />
+    <ToDoContainer :toDoType=" 'uncompleted'  " />
+    <ToDoContainer :toDoType=" 'completed'  " />
 
   </MainView>
 
@@ -13,13 +13,13 @@
 <script>
 import MainView from './views/MainView'
 import ToDoInput from './components/ToDoInput'
-import Container from './components/toDo-container/Container'
+import ToDoContainer from './components/toDo-container/ToDoContainer'
 
 export default {
   components: {
     MainView,
     ToDoInput,
-    Container
+    ToDoContainer
   }
 
 }

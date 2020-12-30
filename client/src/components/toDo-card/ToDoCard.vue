@@ -1,19 +1,16 @@
 <template>
   <div
     :class="{
-      completeToDoStyle: toDo.completed,
-      uncompleteToDoStyle: !toDo.completed,
+      completeToDo: toDo.completed,
+      uncompleteToDo: !toDo.completed,
     }"
-    class="flex flex-wrap p-2 w-full h-24 rounded-md my-2 shadow-md"
+    class="card"
   >
-    <div
-      class=" flex place-content-center w-full h-1/2 font-bold text-center text-2xl "
-    >
-      {{ toDo.title }}
-    </div>
+    
+    <ToDoCardBody :toDo="toDo" />
 
-    <Buttons
-      :isToDoTypeCompleted="toDo.completed"
+    <ToDoCardButton
+      :isToDoCompleted="toDo.completed"
       @completeButton="completeToDo(toDo)"
       @deleteButton="deleteToDo(toDo)"
     />
@@ -21,7 +18,8 @@
 </template>
 
 <script>
-import Buttons from "./Buttons";
+import ToDoCardBody from './ToDoCardBody'
+import ToDoCardButton from "./ToDoCardButton";
 
 export default {
   name: "ToDoCard",
@@ -34,7 +32,8 @@ export default {
   },
 
   components: {
-    Buttons
+    ToDoCardBody,
+    ToDoCardButton
   },
 
   methods: {
@@ -49,10 +48,13 @@ export default {
 </script>
 
 <style scoped lang="postcss">
-.uncompleteToDoStyle {
+.card {
+  @apply flex flex-wrap p-2 w-full h-24 rounded-md my-2 shadow-md;
+}
+.uncompleteToDo {
   @apply bg-gray-200 text-blue-400;
 }
-.completeToDoStyle {
+.completeToDo {
   @apply bg-blue-400 text-gray-200;
 }
 </style>
