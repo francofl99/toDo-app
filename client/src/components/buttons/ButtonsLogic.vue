@@ -29,6 +29,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="postcss">
+.button {
+    @apply cursor-pointer text-center p-2 items-center shadow-md font-bold  w-full h-full  rounded-md;
+}
 </style>

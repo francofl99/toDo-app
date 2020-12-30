@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import ButtonsLogic from "../ButtonsLogic";
+import ButtonsLogic from "../buttons/ButtonsLogic";
 
 export default {
   name: "ToDoCardButton",
