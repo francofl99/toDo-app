@@ -16,7 +16,7 @@
         Tareas completadas
       </h1>
     </div>
-    <div class="flex flex-col row-span-4 overflow-y-auto px-4">
+    <div class="flex flex-col row-span-4 overflow-y-auto px-4 scrollbar">
       <div v-for="toDo in getToDoType()" :key="toDo._id">
         <ToDoCard :toDo="toDo" />
       </div>
