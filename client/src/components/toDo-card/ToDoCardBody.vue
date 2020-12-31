@@ -12,7 +12,7 @@ export default {
 
     props: {
         toDo: {
-            type: Boolean,
+            type: Object,
             required: true
         }
     }

@@ -12,7 +12,7 @@
 
 <script>
 import MainView from './views/MainView'
-import ToDoInput from './components/ToDoInput'
+import ToDoInput from './components/toDo-input/ToDoInput'
 import ToDoContainer from './components/toDo-container/ToDoContainer'
 
 export default {
