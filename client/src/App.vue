@@ -1,13 +1,9 @@
 <template>
-
   <MainView>
     <ToDoInput />
     <ToDoContainer :toDoType=" 'uncompleted'  " />
     <ToDoContainer :toDoType=" 'completed'  " />
-
   </MainView>
-
-  
 </template>
 
 <script>
@@ -21,7 +17,6 @@ export default {
     ToDoInput,
     ToDoContainer
   }
-
 }
 </script>
 
