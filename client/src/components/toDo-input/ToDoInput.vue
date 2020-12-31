@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <label for="inputToDo" class="container-input-label">
-      Nueva Tarea
+      New task
     </label>
     <input
       id="inputToDo"
@@ -9,7 +9,11 @@
       v-model="newToDo"
       class="container-input"
     />
-    <ButtonsLogic class="create-button" :name="'create'" @click.native="addToDo()" />
+    <ButtonsLogic
+      class="create-button"
+      :name="'create'"
+      @click.native="addToDo()"
+    />
   </div>
 </template>
 
@@ -48,6 +52,6 @@ export default {
 }
 
 .create-button {
-  @apply w-1/6 h-3/4 place-self-end ;
+  @apply w-1/6 h-3/4 place-self-end;
 }
 </style>

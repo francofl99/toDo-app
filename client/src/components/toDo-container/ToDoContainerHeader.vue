@@ -1,27 +1,25 @@
 <template>
   <div class="container-header">
-      <h1 v-if="isToDoCompleted">
-        Tareas no completadas
-      </h1>
-      <h1 v-else>
-        Tareas completadas
-      </h1>
-    </div>
-
+    <h1 v-if="isToDoCompleted">
+      Completed task
+    </h1>
+    <h1 v-else>
+      Uncompleted task
+    </h1>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'ToDoContainerHeader',
+  name: "ToDoContainerHeader",
 
-    props: {
-        isToDoCompleted: {
-            type: Boolean,
-            required: true
-        }
-    }
-
-}
+  props: {
+    isToDoCompleted: {
+      type: Boolean,
+      required: true,
+    },
+  },
+};
 </script>
 
 <style scoped lang="postcss">

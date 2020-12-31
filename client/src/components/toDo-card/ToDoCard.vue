@@ -6,7 +6,6 @@
     }"
     class="card"
   >
-    
     <ToDoCardBody :toDo="toDo" />
 
     <ToDoCardButton
@@ -18,7 +17,7 @@
 </template>
 
 <script>
-import ToDoCardBody from './ToDoCardBody'
+import ToDoCardBody from "./ToDoCardBody";
 import ToDoCardButton from "./ToDoCardButton";
 
 export default {
@@ -27,13 +26,13 @@ export default {
   props: {
     toDo: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
 
   components: {
     ToDoCardBody,
-    ToDoCardButton
+    ToDoCardButton,
   },
 
   methods: {

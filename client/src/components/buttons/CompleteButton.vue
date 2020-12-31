@@ -1,8 +1,6 @@
 <template>
-  <div
-    class="button complete-button"
-  >
-    Completar
+  <div class="button complete-button">
+    Complete
   </div>
 </template>
 
@@ -16,5 +14,4 @@ export default {
 .complete-button {
   @apply text-gray-100 bg-green-600;
 }
-
 </style>

@@ -6,20 +6,18 @@
     }"
     class="container"
   >
-
     <ToDoContainerHeader :isToDoCompleted="isToDoCompleted" />
     <ToDoContainerBody :isToDoCompleted="isToDoCompleted" />
-    
   </div>
 </template>
 
 <script>
-import ToDoContainerHeader from './ToDoContainerHeader'
-import ToDoContainerBody from './ToDoContainerBody'
+import ToDoContainerHeader from "./ToDoContainerHeader";
+import ToDoContainerBody from "./ToDoContainerBody";
 
 export default {
-  name: 'ToDoContainer',
-  
+  name: "ToDoContainer",
+
   computed: {
     isToDoCompleted() {
       return this.toDoType == "completed";
@@ -35,7 +33,7 @@ export default {
 
   components: {
     ToDoContainerHeader,
-    ToDoContainerBody
+    ToDoContainerBody,
   },
 };
 </script>

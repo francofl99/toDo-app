@@ -1,17 +1,17 @@
 <template>
-  <div class="w-full h-1/2 flex flex-row-reverse">
-    <div v-if="isToDoCompleted">
-      <ButtonsLogic
-        @click.native="emmitClick('deleteButton')"
-        :name="'delete'"
-      />
-    </div>
-    <div v-else>
-      <ButtonsLogic
-        @click.native="emmitClick('completeButton')"
-        :name="'complete'"
-      />
-    </div>
+  <div class="toDo-button-container">
+    <ButtonsLogic
+      class="toDo-button"
+      v-if="isToDoCompleted"
+      @click.native="emmitClick('deleteButton')"
+      :name="'delete'"
+    />
+    <ButtonsLogic
+      v-else
+      class="toDo-button"
+      @click.native="emmitClick('completeButton')"
+      :name="'complete'"
+    />
   </div>
 </template>
 
@@ -40,4 +40,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped lang="postcss">
+.toDo-button-container {
+  @apply w-full h-1/2 flex flex-row-reverse;
+}
+
+.toDo-button {
+  @apply h-full w-1/6;
+}
+</style>

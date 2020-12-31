@@ -10,8 +10,8 @@
 import ToDoCard from "../toDo-card/ToDoCard";
 
 export default {
-  name: 'ToDoContainerBody',
-  
+  name: "ToDoContainerBody",
+
   computed: {
     uncompletedToDos() {
       return this.$store.getters.getUncompletedToDos;
@@ -29,7 +29,7 @@ export default {
   },
 
   components: {
-      ToDoCard
+    ToDoCard,
   },
 
   methods: {
