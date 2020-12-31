@@ -3,6 +3,7 @@ import App from './App.vue'
 import './assets/tailwind.css'
 import Vuex from 'vuex'
 import store from '@/store'
+import 'animate.css';
 
 Vue.use(Vuex)
 

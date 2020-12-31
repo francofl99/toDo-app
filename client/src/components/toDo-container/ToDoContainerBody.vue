@@ -1,8 +1,13 @@
 <template>
   <div class="container-body">
-    <div v-for="toDo in getToDoType()" :key="toDo._id">
-      <ToDoCard :toDo="toDo" />
-    </div>
+    <transition-group
+      enter-active-class="animate__animated animate__fadeInDown animate__faster"
+      leave-active-class="animate__animated animate__fadeOutRight animate__faster"
+    >
+      <div v-for="toDo in getToDoType()" :key="toDo._id">
+        <ToDoCard :toDo="toDo" />
+      </div>
+    </transition-group>
   </div>
 </template>
 
