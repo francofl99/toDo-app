@@ -11,6 +11,7 @@
 # General info
 
 A very simple CRUD app to manage personal tasks which I made to learn new technologies, the app allow us to create tasks, complete them and remove them
+![Preview](https://user-images.githubusercontent.com/52181281/103423798-70cbba80-4b87-11eb-8df6-23dd1c207775.png)
 
 # Technologies
 
