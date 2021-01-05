@@ -12,6 +12,6 @@ export default {
 
 <style scoped lang="postcss">
 .complete-button {
-  @apply text-gray-100 bg-green-600;
+  @apply text-teal-900 hover:bg-teal-600 bg-teal-500;
 }
 </style>

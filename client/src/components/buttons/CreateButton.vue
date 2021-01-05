@@ -12,6 +12,6 @@ export default {
 
 <style scoped lang="postcss">
 .create-button {
-  @apply bg-blue-400 flex text-gray-200;
+  @apply bg-lightBlue-400 hover:bg-lightBlue-500 text-lightBlue-900;
 }
 </style>

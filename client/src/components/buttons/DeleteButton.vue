@@ -12,6 +12,6 @@ export default {
 
 <style scoped lang="postcss">
 .delete-button {
-  @apply text-red-900 bg-red-400;
+  @apply hover:bg-rose-400 bg-rose-300 text-rose-900;
 }
 </style>
