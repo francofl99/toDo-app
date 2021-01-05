@@ -37,16 +37,13 @@ $ npm install
 After that, run node in the server side:
 
 ```
-$ cd ./server
-$ node index
+$ npm run server
 ```
 
-After that, run vue in the client side:
+After that, in a different terminal, run vue in the client side:
 
 ```
-$ cd ..
-$ cd ./client
-$ npm run serve
+$ npm run client
 ```
 
 Enjoy it :)
