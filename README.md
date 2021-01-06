@@ -30,8 +30,12 @@ A very simple CRUD app to manage personal tasks which I made to learn new techno
 First at all it's necessary to have a MongoDB instance running in background, after check that, you can clone this project and install the npm dependencies:
 
 ```
-$ cd toDo-app
+$ cd toDo-app/client
 $ npm install
+$ cd ..
+$ cd server
+$ npm install
+$ cd ..
 ```
 
 After that, run node in the server side:
