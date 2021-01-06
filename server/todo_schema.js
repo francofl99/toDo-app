@@ -8,6 +8,10 @@ const todoSchema = mongoose.Schema({
     completed: {
         type: Boolean,
         required: true
+    },
+    onEditMode: {
+        type: Boolean,
+        required: true
     }
 });
 

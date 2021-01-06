@@ -34,6 +34,7 @@ app.post('/todo/add', (req, res) => {
     newTODO.title = req.body.todo;
 
     newTODO.completed = false;
+    newTODO.onEditMode = false;
 
     newTODO.save((err) => {
         if(err) {
@@ -60,6 +61,25 @@ app.get('/todo/uncompleted', (req, res) => {
             res.send("Error while fetching Todos")
         } else {
             res.json(todos)
+        }
+    })
+})
+
+app.post('/todo/toEditMode/:id', (req, res) => {
+    todoModel.findByIdAndUpdate(req.params.id, {onEditMode : true}, (err, todo) => {
+        if (!err) {
+            res.send("Good work")
+        }
+        else {
+            res.send(err)
+        }
+    })
+})
+
+app.post('/todo/toViewMode/:id', (req, res) => {
+    todoModel.findByIdAndUpdate(req.params.id, {onEditMode : false}, (err, todo) => {
+        if (!err) {
+            res.send("Good work")
         }
     })
 })

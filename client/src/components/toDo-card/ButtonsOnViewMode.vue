@@ -6,18 +6,17 @@
       @click.native="emmitClick('delete-button-clicked')"
       :name="'delete'"
     />
-    <div class="toDo-button-container" v-else>
-      <ButtonsLogic
-        class="toDo-button"
-        @click.native="emmitClick('complete-button-clicked')"
-        :name="'complete'"
-      />
-      <ButtonsLogic
-        class="toDo-button mr-2"
-        @click.native="emmitClick('edit-button-clicked')"
-        :name="'edit'"
-      />
-    </div>
+    <ButtonsLogic
+      class="toDo-button"
+      v-if="!isToDoCompleted"
+      @click.native="emmitClick('complete-button-clicked')"
+      :name="'complete'"
+    />
+    <ButtonsLogic
+      class="toDo-button mr-2"
+      @click.native="emmitClick('edit-button-clicked')"
+      :name="'edit'"
+    />
   </div>
 </template>
 
@@ -25,7 +24,7 @@
 import ButtonsLogic from "../buttons/ButtonsLogic";
 
 export default {
-  name: "ToDoCardButton",
+  name: "ButtonsOnViewMode",
 
   props: {
     isToDoCompleted: {
@@ -34,21 +33,21 @@ export default {
     },
   },
 
-  components: {
-    ButtonsLogic,
-  },
-
   methods: {
     emmitClick(buttonClicked) {
       this.$emit(buttonClicked);
     },
+  },
+
+  components: {
+    ButtonsLogic,
   },
 };
 </script>
 
 <style scoped lang="postcss">
 .toDo-button-container {
-  @apply w-full flex flex-row-reverse;
+  @apply w-full h-2/5 flex flex-row-reverse;
 }
 
 .toDo-button {

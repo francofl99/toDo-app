@@ -34,12 +34,22 @@ export default {
         })
         .catch(error => console.log(error))
       },
-  
+      toDoToEditMode(context, toDoToParseToEditMode) {
+        axios.post("http://localhost:3000/todo/toEditMode/" + toDoToParseToEditMode._id)
+        .then(() => {
+          context.dispatch('getAllToDos')
+        })
+      },
+      toDoViewMode(context, toDoToParseToViewMode) {
+        axios.post("http://localhost:3000/todo/toViewMode/" + toDoToParseToViewMode._id)
+        .then(() => {
+          context.dispatch('getAllToDos')
+        })
+      },
       completeToDo(context, toDoToComplete) {
         axios.post("http://localhost:3000/todo/complete/" + toDoToComplete._id)
         .then(() => {
-          context.dispatch('getUncompletedToDos')
-          context.dispatch('getCompletedToDos')
+          context.dispatch('getAllToDos')
         })
         .catch(error => console.log(error))
       },
@@ -51,7 +61,12 @@ export default {
         })
         .catch(error => console.log(error))
       },
-  
+      
+      getAllToDos(context) {
+        context.dispatch('getUncompletedToDos')
+        context.dispatch('getCompletedToDos')
+      },
+
       getUncompletedToDos(context) {
         axios.get('http://localhost:3000/todo/uncompleted')
         .then(response => {
