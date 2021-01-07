@@ -30,11 +30,11 @@ db.on('error', (error) => {
 
 app.post('/todo/add', (req, res) => {
     let newTODO = new todoModel;
+    let toDoToAdd = req.body.toDoToAdd
 
-    newTODO.title = req.body.todo;
-
-    newTODO.completed = false;
-    newTODO.onEditMode = false;
+    newTODO.title = toDoToAdd.title;
+    newTODO.completed = toDoToAdd.completed;
+    newTODO.onEditMode = toDoToAdd.onEditMode;
 
     newTODO.save((err) => {
         if(err) {

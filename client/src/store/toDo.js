@@ -27,7 +27,7 @@ export default {
     actions: {
       addToDo(context, toDoToAdd) {
         axios.post('http://localhost:3000/todo/add', {
-          todo: toDoToAdd
+          toDoToAdd: toDoToAdd
         })
         .then( () => {
           context.dispatch('getUncompletedToDos')

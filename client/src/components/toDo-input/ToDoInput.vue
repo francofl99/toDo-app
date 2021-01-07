@@ -6,7 +6,7 @@
     <input
       id="inputToDo"
       type="text"
-      v-model="newToDo"
+      v-model="newToDo.title"
       class="container-input"
     />
     <ButtonsLogic
@@ -24,7 +24,11 @@ export default {
   name: "ToDoInput",
 
   data: () => ({
-    newToDo: "",
+    newToDo: {
+      title: "",
+      onEditMode: false,
+      completed: false,
+    },
   }),
 
   components: {
