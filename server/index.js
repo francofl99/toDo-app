@@ -76,8 +76,9 @@ app.post('/todo/toEditMode/:id', (req, res) => {
     })
 })
 
-app.post('/todo/toViewMode/:id', (req, res) => {
-    todoModel.findByIdAndUpdate(req.params.id, {onEditMode : false}, (err, todo) => {
+app.post('/todo/update/:id', (req, res) => {
+    let newToDo = req.body.newToDo
+    todoModel.findByIdAndUpdate(req.params.id, {title: newToDo.title, onEditMode: newToDo.onEditMode}, (err, todo) => {
         if (!err) {
             res.send("Good work")
         }

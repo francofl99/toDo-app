@@ -1,22 +1,47 @@
 <template>
-  <div class="h-full">
-    <input type="text" v-model="toDoTitle" class="input" />
+  <div class="card-mode">
+    <input type="text" v-model="newToDo.title" class="input" />
+    <ButtonSection
+      @complete-button-clicked="updateToDo()"
+      class="card-buttons"
+      :toDo="toDo"
+    />
   </div>
 </template>
 
 <script>
+import ButtonSection from "./ButtonSection";
+
 export default {
   name: "OnEditMode",
 
   data() {
     return {
-      toDoTitle: "",
+      newToDo: {
+        title: "",
+        onEditMode: false,
+        completed: this.toDo.completed,
+      },
     };
   },
 
+  props: {
+    toDo: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  components: {
+    ButtonSection,
+  },
+
   methods: {
-    toDoTitleChanged() {
-      this.$emit("toDo-changed", this.toDoTitle);
+    updateToDo() {
+      this.$store.dispatch("updateToDo", {
+        toDo: this.toDo,
+        newToDo: this.newToDo,
+      });
     },
   },
 };
@@ -24,6 +49,6 @@ export default {
 
 <style scoped lang="postcss">
 .input {
-  @apply h-1/2 w-1/2 shadow-md bg-gray-400 rounded-md text-white;
+  @apply h-1/2 w-1/2 shadow-md bg-gray-400 rounded-md text-gray-900;
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="card-mode">
     <div class="card-body">
       {{ toDo.title }}
     </div>
-    <ButtonsOnViewMode
+    <ButtonSection
       class="card-buttons"
-      :isToDoCompleted="toDo.completed"
+      :toDo="toDo"
       @edit-button-clicked="toDoToEditMode()"
       @complete-button-clicked="completeToDo()"
       @delete-button-clicked="deleteToDo()"
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import ButtonsOnViewMode from "./ButtonsOnViewMode";
+import ButtonSection from "./ButtonSection";
 
 export default {
   name: "OnViewMode",
@@ -27,7 +27,7 @@ export default {
   },
 
   components: {
-    ButtonsOnViewMode,
+    ButtonSection,
   },
 
   methods: {
@@ -47,9 +47,5 @@ export default {
 <style scoped lang="postcss">
 .card-body {
   @apply w-full flex place-content-start h-1/2;
-}
-
-.card-buttons {
-  @apply w-full h-1/2;
 }
 </style>

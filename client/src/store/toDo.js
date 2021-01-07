@@ -35,13 +35,15 @@ export default {
         .catch(error => console.log(error))
       },
       toDoToEditMode(context, toDoToParseToEditMode) {
-        axios.post("http://localhost:3000/todo/toEditMode/" + toDoToParseToEditMode._id)
+        axios.post("http://localhost:3000/todo/toEditMode/" + toDoToParseToEditMode._id, )
         .then(() => {
           context.dispatch('getAllToDos')
         })
       },
-      toDoViewMode(context, toDoToParseToViewMode) {
-        axios.post("http://localhost:3000/todo/toViewMode/" + toDoToParseToViewMode._id)
+      updateToDo(context, toDos) {
+        axios.post("http://localhost:3000/todo/update/" + toDos.toDo._id, {
+            newToDo: toDos.newToDo
+        })
         .then(() => {
           context.dispatch('getAllToDos')
         })

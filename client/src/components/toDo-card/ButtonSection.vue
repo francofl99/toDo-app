@@ -1,14 +1,21 @@
 <template>
-  <div class="toDo-button-container">
+  <div v-if="isToDoOnEditMode()" class="toDo-button-container">
+    <ButtonsLogic
+      @click.native="emmitClick('complete-button-clicked')"
+      :name="'complete'"
+      class="toDo-button"
+    />
+  </div>
+  <div v-else class="toDo-button-container">
     <ButtonsLogic
       class="toDo-button"
-      v-if="isToDoCompleted"
+      v-if="isToDoCompleted()"
       @click.native="emmitClick('delete-button-clicked')"
       :name="'delete'"
     />
     <ButtonsLogic
       class="toDo-button"
-      v-if="!isToDoCompleted"
+      v-if="!isToDoCompleted()"
       @click.native="emmitClick('complete-button-clicked')"
       :name="'complete'"
     />
@@ -24,16 +31,22 @@
 import ButtonsLogic from "../buttons/ButtonsLogic";
 
 export default {
-  name: "ButtonsOnViewMode",
+  name: "ButtonSection",
 
   props: {
-    isToDoCompleted: {
-      type: Boolean,
+    toDo: {
+      type: Object,
       required: true,
     },
   },
 
   methods: {
+    isToDoCompleted() {
+      return this.toDo.completed;
+    },
+    isToDoOnEditMode() {
+      return this.toDo.onEditMode;
+    },
     emmitClick(buttonClicked) {
       this.$emit(buttonClicked);
     },

@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <OnViewMode v-if="!toDo.onEditMode" :toDo="toDo" />
-    <OnEditMode v-else @toDo-changed="updateToDo()" />
+    <OnEditMode v-else @toDo-changed="updateToDo()" :toDo="toDo" />
   </div>
 </template>
 
@@ -23,26 +23,19 @@ export default {
     OnViewMode,
     OnEditMode,
   },
-
-  methods: {
-    updateToDo(newToDo) {
-      this.$store.dispatch("updateToDo", this.toDo, newToDo);
-    },
-    toDoToEditMode() {
-      this.$store.dispatch("toDoToEditMode", this.toDo);
-    },
-    completeToDo() {
-      this.$store.dispatch("completeToDo", this.toDo);
-    },
-    deleteToDo() {
-      this.$store.dispatch("deleteToDo", this.toDo);
-    },
-  },
 };
 </script>
 
-<style scoped lang="postcss">
+<style lang="postcss">
 .card {
   @apply flex-col  place-content-start font-bold text-2xl bg-gray-300 text-blue-400 flex p-2 w-full h-24 rounded-md my-2 shadow-md;
+}
+
+.card-mode {
+  @apply h-full;
+}
+
+.card-buttons {
+  @apply w-full h-1/2;
 }
 </style>
