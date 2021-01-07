@@ -52,6 +52,6 @@ export default {
 }
 
 .create-button {
-  @apply w-1/6 h-3/4 place-self-end;
+  @apply w-2/6 h-3/4 place-self-end;
 }
 </style>
