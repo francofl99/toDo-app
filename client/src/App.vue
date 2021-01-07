@@ -1,8 +1,8 @@
 <template>
   <MainView>
     <ToDoInput />
-    <ToDoContainer :toDoType="'uncompleted'" />
-    <ToDoContainer :toDoType="'completed'" />
+    <ToDoContainer :toDosCompleted="false" />
+    <ToDoContainer :toDosCompleted="true" />
   </MainView>
 </template>
 

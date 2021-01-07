@@ -1,6 +1,6 @@
 <template>
   <div class="container-header">
-    <h1 v-if="isToDoCompleted">
+    <h1 v-if="toDosCompleted">
       Completed task
     </h1>
     <h1 v-else>
@@ -11,14 +11,9 @@
 
 <script>
 export default {
-  name: "ToDoContainerHeader",
+  name: "Header",
 
-  props: {
-    isToDoCompleted: {
-      type: Boolean,
-      required: true,
-    },
-  },
+  inject: ["toDosCompleted"],
 };
 </script>
 

@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import ButtonsLogic from "../buttons/ButtonsLogic";
+import ButtonsLogic from "../../buttons/ButtonsLogic";
 
 export default {
   name: "ButtonSection",

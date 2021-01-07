@@ -18,7 +18,7 @@ export default {
   data() {
     return {
       newToDo: {
-        title: "",
+        title: this.toDo.title,
         onEditMode: false,
         completed: this.toDo.completed,
       },

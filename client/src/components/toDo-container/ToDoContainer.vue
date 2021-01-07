@@ -1,39 +1,39 @@
 <template>
   <div
     :class="{
-      containerForUncompleteToDos: !isToDoCompleted,
-      containerForCompleteToDos: isToDoCompleted,
+      containerForUncompleteToDos: !toDosCompleted,
+      containerForCompleteToDos: toDosCompleted,
     }"
     class="container"
   >
-    <ToDoContainerHeader :isToDoCompleted="isToDoCompleted" />
-    <ToDoContainerBody :isToDoCompleted="isToDoCompleted" />
+    <Header />
+    <Body />
   </div>
 </template>
 
 <script>
-import ToDoContainerHeader from "./ToDoContainerHeader";
-import ToDoContainerBody from "./ToDoContainerBody";
+import Header from "./sub-components/Header";
+import Body from "./sub-components/Body";
 
 export default {
   name: "ToDoContainer",
 
-  computed: {
-    isToDoCompleted() {
-      return this.toDoType == "completed";
-    },
-  },
-
   props: {
-    toDoType: {
-      type: String,
+    toDosCompleted: {
+      type: Boolean,
       required: true,
     },
   },
 
+  provide() {
+    return {
+      toDosCompleted: this.toDosCompleted,
+    };
+  },
+
   components: {
-    ToDoContainerHeader,
-    ToDoContainerBody,
+    Header,
+    Body,
   },
 };
 </script>
