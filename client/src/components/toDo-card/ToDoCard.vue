@@ -1,7 +1,7 @@
 <template>
   <div class="card">
-    <OnViewMode v-if="!toDo.onEditMode" :toDo="toDo" />
-    <OnEditMode v-else @toDo-changed="updateToDo()" :toDo="toDo" />
+    <OnEditMode v-if="toDo.onEditMode" :toDo="toDo" />
+    <OnViewMode v-else :toDo="toDo" />
   </div>
 </template>
 

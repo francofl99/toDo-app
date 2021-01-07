@@ -6,10 +6,10 @@
 </template>
 
 <script>
-import CreateButton from "./CreateButton";
-import EditButton from "./EditButton";
-import CompleteButton from "./CompleteButton";
-import DeleteButton from "./DeleteButton";
+import CreateButton from "./sub-components/CreateButton";
+import EditButton from "./sub-components/EditButton";
+import CompleteButton from "./sub-components/CompleteButton";
+import DeleteButton from "./sub-components/DeleteButton";
 
 export default {
   name: "ButtonsLogic",

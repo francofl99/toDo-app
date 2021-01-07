@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isToDoOnEditMode()" class="toDo-button-container">
+  <div v-if="toDo.onEditMode" class="toDo-button-container">
     <ButtonsLogic
       @click.native="emmitClick('complete-button-clicked')"
       :name="'complete'"
@@ -9,13 +9,13 @@
   <div v-else class="toDo-button-container">
     <ButtonsLogic
       class="toDo-button"
-      v-if="isToDoCompleted()"
+      v-if="toDo.completed"
       @click.native="emmitClick('delete-button-clicked')"
       :name="'delete'"
     />
     <ButtonsLogic
       class="toDo-button"
-      v-if="!isToDoCompleted()"
+      v-else
       @click.native="emmitClick('complete-button-clicked')"
       :name="'complete'"
     />
@@ -41,12 +41,6 @@ export default {
   },
 
   methods: {
-    isToDoCompleted() {
-      return this.toDo.completed;
-    },
-    isToDoOnEditMode() {
-      return this.toDo.onEditMode;
-    },
     emmitClick(buttonClicked) {
       this.$emit(buttonClicked);
     },
