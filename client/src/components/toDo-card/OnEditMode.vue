@@ -1,12 +1,12 @@
 <template>
-  <div class="toDo-card-body">
+  <div class="h-full">
     <input type="text" v-model="toDoTitle" class="input" />
   </div>
 </template>
 
 <script>
 export default {
-  name: "ToDoCardBodyOnEditMode",
+  name: "OnEditMode",
 
   data() {
     return {
@@ -24,6 +24,6 @@ export default {
 
 <style scoped lang="postcss">
 .input {
-  @apply h-full w-1/2 shadow-md bg-gray-400 rounded-md text-white;
+  @apply h-1/2 w-1/2 shadow-md bg-gray-400 rounded-md text-white;
 }
 </style>

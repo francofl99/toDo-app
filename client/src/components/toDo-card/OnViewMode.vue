@@ -1,9 +1,10 @@
 <template>
-  <div class="toDo-card-body">
-    <div class="w-full flex place-content-start h-full">
+  <div>
+    <div class="card-body">
       {{ toDo.title }}
     </div>
     <ButtonsOnViewMode
+      class="card-buttons"
       :isToDoCompleted="toDo.completed"
       @edit-button-clicked="toDoToEditMode()"
       @complete-button-clicked="completeToDo()"
@@ -16,7 +17,7 @@
 import ButtonsOnViewMode from "./ButtonsOnViewMode";
 
 export default {
-  name: "ToDoCardBodyOnViewMode",
+  name: "OnViewMode",
 
   props: {
     toDo: {
@@ -43,4 +44,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped lang="postcss">
+.card-body {
+  @apply w-full flex place-content-start h-1/2;
+}
+
+.card-buttons {
+  @apply w-full h-1/2;
+}
+</style>

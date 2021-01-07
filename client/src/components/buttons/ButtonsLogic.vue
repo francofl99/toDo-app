@@ -32,6 +32,6 @@ export default {
 
 <style lang="postcss">
 .button {
-  @apply place-content-center cursor-pointer text-center p-2 items-center shadow-md font-bold  w-full h-full rounded-md transition duration-300;
+  @apply text-lg flex place-content-center cursor-pointer text-center p-2 items-center shadow-md font-bold  w-full h-full rounded-md transition duration-300;
 }
 </style>

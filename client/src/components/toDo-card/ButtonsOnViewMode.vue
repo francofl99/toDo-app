@@ -47,7 +47,7 @@ export default {
 
 <style scoped lang="postcss">
 .toDo-button-container {
-  @apply w-full h-2/5 flex flex-row-reverse;
+  @apply flex flex-row-reverse;
 }
 
 .toDo-button {
