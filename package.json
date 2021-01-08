@@ -3,7 +3,5 @@
         "client": "npm --prefix ./client run serve",
         "server": "npm --prefix ./server run start"
     },
-    "dependencies": {
-        "vuedraggable": "^2.24.3"
-    }
+    "dependencies": {}
 }
