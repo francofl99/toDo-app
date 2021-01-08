@@ -3,6 +3,7 @@
   <EditButton v-else-if="name == 'edit'" />
   <CreateButton v-else-if="name == 'create'" />
   <DeleteButton v-else-if="name == 'delete'" />
+  <ToggleButton v-else-if="name == 'toggle'" />
 </template>
 
 <script>
@@ -10,6 +11,7 @@ import CreateButton from "./sub-components/CreateButton";
 import EditButton from "./sub-components/EditButton";
 import CompleteButton from "./sub-components/CompleteButton";
 import DeleteButton from "./sub-components/DeleteButton";
+import ToggleButton from "./sub-components/ToggleButton";
 
 export default {
   name: "ButtonsLogic",
@@ -26,6 +28,7 @@ export default {
     EditButton,
     CompleteButton,
     DeleteButton,
+    ToggleButton,
   },
 };
 </script>
