@@ -1,8 +1,5 @@
 <template>
-  <div
-    :class="{ navBarOnDarkMode: darkMode, navBar: !darkMode }"
-    class="nav-bar"
-  >
+  <div :class="{ navBarOnDarkMode: darkMode }" class="nav-bar">
     ToDo App
     <ButtonsLogic @click.native="changeDarkMode()" :name="'toggle'" />
   </div>
@@ -34,14 +31,10 @@ export default {
 <style scoped lang="postcss">
 .nav-bar {
   height: 12%;
-  @apply justify-between w-full text-2xl px-4 flex py-2 items-center shadow-md transition duration-300;
+  @apply bg-gray-400 text-gray-800 justify-between w-full text-2xl px-4 flex py-2 items-center shadow-md transition duration-300;
 }
 
 .navBarOnDarkMode {
   @apply text-gray-200 bg-gray-800;
-}
-
-.navBar {
-  @apply bg-gray-400 text-gray-800;
 }
 </style>

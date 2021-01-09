@@ -1,6 +1,10 @@
 <template>
-  <div class="container">
-    <label for="inputToDo" class="container-input-label">
+  <div :class="{ containerOnDarkMode: darkMode }" class="container">
+    <label
+      for="inputToDo"
+      :class="{ containerInputLabelOnDarkMode: darkMode }"
+      class="container-input-label"
+    >
       New task
     </label>
     <input
@@ -22,6 +26,12 @@ import ButtonsLogic from "../buttons/ButtonsLogic";
 
 export default {
   name: "ToDoInput",
+
+  computed: {
+    darkMode() {
+      return this.$store.getters.getDarkMode;
+    },
+  },
 
   data: () => ({
     newToDo: {
@@ -45,10 +55,18 @@ export default {
 
 <style scoped lang="postcss">
 .container {
-  @apply bg-gray-700 rounded-md w-full h-full row-span-1 grid grid-rows-3 p-4;
+  @apply transition   duration-300 shadow-md bg-gray-400 rounded-md w-full h-full row-span-1 grid grid-rows-3 p-4;
+}
+
+.containerOnDarkMode {
+  @apply bg-gray-700;
 }
 .container-input-label {
-  @apply flex items-center place-content-center text-center w-full font-bold text-gray-400 text-2xl h-full;
+  @apply transition duration-300 flex items-center place-content-center text-center w-full font-bold text-gray-700 text-2xl h-full;
+}
+
+.containerInputLabelOnDarkMode {
+  @apply text-gray-400;
 }
 
 .container-input {
