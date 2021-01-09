@@ -55,12 +55,13 @@ export default {
 
 <style scoped lang="postcss">
 .container {
-  @apply transition   duration-300 shadow-md bg-gray-400 rounded-md w-full h-full row-span-1 grid grid-rows-3 p-4;
+  @apply transition duration-300 shadow-md bg-gray-400 rounded-md w-full h-full row-span-1 grid grid-rows-3 p-4;
 }
 
 .containerOnDarkMode {
   @apply bg-gray-700;
 }
+
 .container-input-label {
   @apply transition duration-300 flex items-center place-content-center text-center w-full font-bold text-gray-700 text-2xl h-full;
 }
