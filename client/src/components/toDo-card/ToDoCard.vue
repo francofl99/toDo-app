@@ -28,7 +28,7 @@ export default {
 
 <style lang="postcss">
 .card {
-  @apply flex-col place-content-start font-bold text-2xl bg-gray-300 text-blue-400 flex p-2 w-full h-24 rounded-md my-2 shadow-md;
+  @apply flex-col place-content-start font-bold text-2xl bg-gray-200 text-blue-400 flex p-2 w-full h-24 rounded-md my-2 shadow-md;
 }
 
 .card-mode {

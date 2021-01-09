@@ -63,7 +63,7 @@ export default {
 
 <style scoped lang="postcss">
 .container-body {
-  @apply flex flex-col row-span-4 overflow-y-auto px-4 scrollbar;
+  @apply flex flex-col w-full overflow-y-auto px-4 scrollbar;
 }
 
 .moving-card {

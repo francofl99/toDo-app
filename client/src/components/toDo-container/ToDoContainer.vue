@@ -13,10 +13,10 @@
       class="container-header"
     >
       <h1 v-if="toDosCompleted">
-        Completed task
+        Completed tasks
       </h1>
       <h1 v-else>
-        Uncompleted task
+        Uncompleted tasks
       </h1>
     </div>
     <Body />
@@ -79,14 +79,14 @@ export default {
   @apply containerForCompleteToDosSize  bg-gray-800;
 }
 .container {
-  @apply shadow-md transition duration-300 rounded-md w-full grid grid-rows-5 h-full place-self-end;
+  @apply shadow-md flex flex-col transition duration-300 rounded-md pt-4  w-full h-full place-self-end;
 }
 
 .container-header {
-  @apply transition duration-300 items-center flex place-content-center font-bold text-gray-700 text-2xl w-full;
+  @apply mb-2 shadow-md bg-gray-200 rounded-md transition duration-300 items-center flex place-content-center place-self-center font-bold text-gray-700 text-2xl w-auto p-2;
 }
 
 .containerHeaderOnDarkMode {
-  @apply text-gray-400;
+  @apply text-gray-300 bg-gray-700;
 }
 </style>

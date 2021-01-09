@@ -55,7 +55,7 @@ export default {
 
 <style scoped lang="postcss">
 .container {
-  @apply transition duration-300 shadow-md bg-gray-400 rounded-md w-full h-full row-span-1 grid grid-rows-3 p-4;
+  @apply transition duration-300 shadow-md bg-gray-400 rounded-md w-full h-full row-span-1 flex flex-col p-4;
 }
 
 .containerOnDarkMode {
@@ -63,18 +63,18 @@ export default {
 }
 
 .container-input-label {
-  @apply transition duration-300 flex items-center place-content-center text-center w-full font-bold text-gray-700 text-2xl h-full;
+  @apply place-self-center shadow-md rounded-md  bg-gray-200 transition duration-300 flex items-center place-content-center text-center w-auto px-2 font-bold text-gray-700 text-2xl h-3/4;
 }
 
 .containerInputLabelOnDarkMode {
-  @apply text-gray-400;
+  @apply text-gray-300 bg-gray-700;
 }
 
 .container-input {
-  @apply self-center w-full h-4/5 rounded-md bg-gray-200 shadow-md p-2 font-bold  text-gray-500 text-lg;
+  @apply m-2 self-center w-full h-4/5 rounded-md bg-gray-200 shadow-md p-2 font-bold   text-gray-500 text-lg;
 }
 
 .create-button {
-  @apply w-2/6 h-3/4 place-self-end;
+  @apply w-2/6 h-3/4 self-end;
 }
 </style>
