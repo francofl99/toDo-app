@@ -64,7 +64,7 @@ export default {
 }
 
 .containerForUncompleteToDosOnDarkMode {
-  @apply bg-gray-700 containerForUncompleteToDosSize;
+  @apply bg-gray-800 containerForUncompleteToDosSize;
 }
 
 .containerForCompleteToDosSize {
@@ -76,7 +76,7 @@ export default {
 }
 
 .containerForCompleteToDosOnDarkMode {
-  @apply containerForCompleteToDosSize  bg-gray-700;
+  @apply containerForCompleteToDosSize  bg-gray-800;
 }
 .container {
   @apply shadow-md transition duration-300 rounded-md w-full grid grid-rows-5 h-full place-self-end;

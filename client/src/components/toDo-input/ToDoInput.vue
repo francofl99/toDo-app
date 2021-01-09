@@ -59,7 +59,7 @@ export default {
 }
 
 .containerOnDarkMode {
-  @apply bg-gray-700;
+  @apply bg-gray-800;
 }
 
 .container-input-label {
