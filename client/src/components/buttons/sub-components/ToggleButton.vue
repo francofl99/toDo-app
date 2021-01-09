@@ -22,6 +22,12 @@ export default {
   data: () => ({
     toggleActive: false,
   }),
+
+  watch: {
+    toggleActive() {
+      this.$emit("toggle-button-clicked");
+    },
+  },
 };
 </script>
 

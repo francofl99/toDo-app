@@ -1,7 +1,7 @@
 <template>
   <div class="nav-bar">
     ToDo App
-    <ButtonsLogic :name="'toggle'" />
+    <ButtonsLogic @toggle-button-clicked="changeDarkMode()" :name="'toggle'" />
   </div>
 </template>
 
@@ -12,6 +12,13 @@ export default {
 
   components: {
     ButtonsLogic,
+  },
+
+  methods: {
+    changeDarkMode() {
+      console.log("hi");
+      this.$store.commit("changeDarkModeState");
+    },
   },
 };
 </script>

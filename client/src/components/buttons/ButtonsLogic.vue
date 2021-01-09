@@ -3,7 +3,10 @@
   <EditButton v-else-if="name == 'edit'" />
   <CreateButton v-else-if="name == 'create'" />
   <DeleteButton v-else-if="name == 'delete'" />
-  <ToggleButton v-else-if="name == 'toggle'" />
+  <ToggleButton
+    @toggle-button-clicked="emmitToggleButtonClicked()"
+    v-else-if="name == 'toggle'"
+  />
 </template>
 
 <script>
@@ -29,6 +32,12 @@ export default {
     CompleteButton,
     DeleteButton,
     ToggleButton,
+  },
+
+  methods: {
+    emmitToggleButtonClicked() {
+      this.$emit("toggle-button-clicked");
+    },
   },
 };
 </script>
