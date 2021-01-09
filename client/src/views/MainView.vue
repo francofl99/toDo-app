@@ -1,7 +1,10 @@
 <template>
   <div class="w-screen h-screen">
     <NavBar />
-    <div class="body-container">
+    <div
+      :class="{ mainViewOnDarkMode: darkMode, mainView: !darkMode }"
+      class="body-container"
+    >
       <slot />
     </div>
   </div>
@@ -13,6 +16,12 @@ import NavBar from "./NavBar";
 export default {
   name: "MainView",
 
+  computed: {
+    darkMode() {
+      return this.$store.getters.getDarkMode;
+    },
+  },
+
   components: {
     NavBar,
   },
@@ -22,6 +31,14 @@ export default {
 <style scoped lang="postcss">
 .body-container {
   height: 88%;
-  @apply bg-gray-600 gap-4 grid grid-rows-3 grid-cols-2 grid-flow-col p-4;
+  @apply gap-4 grid grid-rows-3 grid-cols-2 grid-flow-col p-4;
+}
+
+.mainViewOnDarkMode {
+  @apply bg-gray-600;
+}
+
+.mainView {
+  @apply bg-gray-100;
 }
 </style>

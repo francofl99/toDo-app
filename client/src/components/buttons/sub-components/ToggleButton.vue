@@ -1,17 +1,13 @@
 <template>
-  <div class="container">
-    <div class="header">Dark Mode</div>
-
+  <div
+    :class="{ toggleContainerOnActiveMode: toggleActive }"
+    @click="toggleActive = !toggleActive"
+    class="toggle-container"
+  >
     <div
-      :class="{ toggleContainerOnActiveMode: toggleActive }"
-      @click="toggleActive = !toggleActive"
-      class="toggle-container"
-    >
-      <div
-        :class="{ toggleButtonOnActiveMode: toggleActive }"
-        class="toggle-button"
-      ></div>
-    </div>
+      :class="{ toggleButtonOnActiveMode: toggleActive }"
+      class="toggle-button"
+    ></div>
   </div>
 </template>
 
@@ -22,24 +18,10 @@ export default {
   data: () => ({
     toggleActive: false,
   }),
-
-  watch: {
-    toggleActive() {
-      this.$emit("toggle-button-clicked");
-    },
-  },
 };
 </script>
 
 <style scoped lang="postcss">
-.container {
-  @apply flex items-center justify-end py-6 w-2/6;
-}
-
-.header {
-  @apply text-xl font-bold text-gray-200 mr-2;
-}
-
 .toggle-container {
   @apply w-16 h-8 duration-300 ease-in-out bg-gray-300 rounded-full flex-shrink-0 p-1;
 }

@@ -1,7 +1,10 @@
 <template>
-  <div class="nav-bar">
+  <div
+    :class="{ navBarOnDarkMode: darkMode, navBar: !darkMode }"
+    class="nav-bar"
+  >
     ToDo App
-    <ButtonsLogic @toggle-button-clicked="changeDarkMode()" :name="'toggle'" />
+    <ButtonsLogic @click.native="changeDarkMode()" :name="'toggle'" />
   </div>
 </template>
 
@@ -10,13 +13,18 @@ import ButtonsLogic from "../components/buttons/ButtonsLogic";
 export default {
   name: "NavBar",
 
+  computed: {
+    darkMode() {
+      return this.$store.getters.getDarkMode;
+    },
+  },
+
   components: {
     ButtonsLogic,
   },
 
   methods: {
     changeDarkMode() {
-      console.log("hi");
       this.$store.commit("changeDarkModeState");
     },
   },
@@ -26,6 +34,14 @@ export default {
 <style scoped lang="postcss">
 .nav-bar {
   height: 12%;
-  @apply bg-gray-800 justify-between w-full text-2xl px-4 flex py-2 items-center text-gray-200;
+  @apply justify-between w-full text-2xl px-4 flex py-2 items-center shadow-md transition duration-300;
+}
+
+.navBarOnDarkMode {
+  @apply text-gray-200 bg-gray-800;
+}
+
+.navBar {
+  @apply bg-gray-400 text-gray-800;
 }
 </style>

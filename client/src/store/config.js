@@ -10,7 +10,6 @@ export default {
     mutations: {
         changeDarkModeState(state) {
             state.darkMode = !state.darkMode
-            console.log(state.darkMode)
         }
     }
 }
