@@ -1,15 +1,22 @@
 <template>
   <div
     :class="{
-      containerForUncompleteToDos: !toDosCompleted,
-      containerForCompleteToDos: toDosCompleted,
-      containerForUncompleteToDosOnDarkMode: !toDosCompleted && darkMode,
-      containerForCompleteToDosOnDarkMode: toDosCompleted && darkMode,
+      'container-for-uncomplete-toDos-size primary-bg-color':
+        !toDosCompleted && !darkMode,
+      'container-for-complete-toDos-size primary-bg-color':
+        toDosCompleted && !darkMode,
+      'container-for-uncomplete-toDos-size primary-bg-color-on-dark-mode':
+        !toDosCompleted && darkMode,
+      'container-for-complete-toDos-size primary-bg-color-on-dark-mode':
+        toDosCompleted && darkMode,
     }"
     class="container"
   >
     <div
-      :class="{ containerHeaderOnDarkMode: darkMode }"
+      :class="{
+        'secondary-color-on-dark-mode': darkMode,
+        'secondary-color': !darkMode,
+      }"
       class="container-header"
     >
       <h1 v-if="toDosCompleted">
@@ -42,6 +49,11 @@ export default {
     },
   },
 
+  methods: {
+    areToDosCompleted() {},
+    areToDosCompleted() {},
+  },
+
   provide() {
     return {
       toDosCompleted: this.toDosCompleted,
@@ -55,38 +67,19 @@ export default {
 </script>
 
 <style scoped lang="postcss">
-.containerForUncompleteToDosSize {
+.container-for-uncomplete-toDos-size {
   @apply row-span-2;
 }
 
-.containerForUncompleteToDos {
-  @apply containerForUncompleteToDosSize bg-gray-400;
-}
-
-.containerForUncompleteToDosOnDarkMode {
-  @apply bg-gray-800 containerForUncompleteToDosSize;
-}
-
-.containerForCompleteToDosSize {
+.container-for-complete-toDos-size {
   @apply row-span-3;
 }
 
-.containerForCompleteToDos {
-  @apply containerForCompleteToDosSize bg-gray-400;
-}
-
-.containerForCompleteToDosOnDarkMode {
-  @apply containerForCompleteToDosSize  bg-gray-800;
-}
 .container {
   @apply shadow-md flex flex-col transition duration-300 rounded-md pt-4  w-full h-full place-self-end;
 }
 
 .container-header {
-  @apply mb-2 shadow-md bg-gray-200 rounded-md transition duration-300 items-center flex place-content-center place-self-center font-bold text-gray-700 text-2xl w-auto p-2;
-}
-
-.containerHeaderOnDarkMode {
-  @apply text-gray-300 bg-gray-700;
+  @apply mb-2 shadow-md rounded-md transition duration-300 items-center flex place-content-center place-self-center font-bold text-2xl w-auto p-2;
 }
 </style>

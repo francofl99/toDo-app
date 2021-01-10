@@ -21,7 +21,7 @@ export default {
 };
 </script>
 
-<style scoped lang="postcss">
+<style lang="postcss" scoped>
 .toggle-container {
   @apply w-16 h-8 duration-300 ease-in-out bg-gray-300 rounded-full flex-shrink-0 p-1;
 }

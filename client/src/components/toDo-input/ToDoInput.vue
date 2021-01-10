@@ -1,8 +1,17 @@
 <template>
-  <div :class="{ containerOnDarkMode: darkMode }" class="container">
+  <div
+    :class="{
+      'primary-bg-color-on-dark-mode ': darkMode,
+      'primary-bg-color': !darkMode,
+    }"
+    class="container"
+  >
     <label
       for="inputToDo"
-      :class="{ containerInputLabelOnDarkMode: darkMode }"
+      :class="{
+        'secondary-color-on-dark-mode': darkMode,
+        'secondary-color': !darkMode,
+      }"
       class="container-input-label"
     >
       New task
@@ -55,19 +64,11 @@ export default {
 
 <style scoped lang="postcss">
 .container {
-  @apply transition duration-300 shadow-md bg-gray-400 rounded-md w-full h-full row-span-1 flex flex-col p-4;
-}
-
-.containerOnDarkMode {
-  @apply bg-gray-800;
+  @apply transition duration-300 shadow-md rounded-md w-full h-full row-span-1 flex flex-col p-4;
 }
 
 .container-input-label {
-  @apply place-self-center shadow-md rounded-md  bg-gray-200 transition duration-300 flex items-center place-content-center text-center w-auto px-2 font-bold text-gray-700 text-2xl h-3/4;
-}
-
-.containerInputLabelOnDarkMode {
-  @apply text-gray-300 bg-gray-700;
+  @apply place-self-center shadow-md rounded-md  transition duration-300 flex items-center place-content-center text-center w-auto px-2 font-bold  text-2xl h-3/4;
 }
 
 .container-input {

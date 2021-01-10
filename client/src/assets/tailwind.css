@@ -1,5 +1,53 @@
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
+
+@layer base {
+  .primary-bg-color-on-dark-mode {
+    @apply bg-gray-800;
+  }
+
+  .primary-bg-color {
+    @apply bg-gray-400;
+  }
+
+  .primary-text-color-on-dark-mode {
+    @apply text-gray-200;
+  }
+
+  .primary-text-color {
+    @apply text-gray-800;
+  }
+
+  .secondary-bg-color-on-dark-mode {
+    @apply bg-gray-700;
+  }
+
+  .secondary-bg-color {
+    @apply bg-gray-300;
+  }
+
+  .secondary-text-color-on-dark-mode {
+    @apply text-gray-300;
+  }
+
+  .secondary-text-color {
+    @apply text-gray-700;
+  }
+
+  .primary-color {
+    @apply primary-bg-color primary-text-color;
+  }
+
+  .primary-color-on-dark-mode {
+    @apply primary-bg-color-on-dark-mode primary-text-color-on-dark-mode;
+  }
+
+  .secondary-color {
+    @apply secondary-bg-color secondary-text-color;
+  }
+
+  .secondary-color-on-dark-mode {
+    @apply secondary-bg-color-on-dark-mode secondary-text-color-on-dark-mode;
+  }
+}
