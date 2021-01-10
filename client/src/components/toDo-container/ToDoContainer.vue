@@ -1,14 +1,10 @@
 <template>
   <div
     :class="{
-      'container-for-uncomplete-toDos-size primary-bg-color':
-        !toDosCompleted && !darkMode,
-      'container-for-complete-toDos-size primary-bg-color':
-        toDosCompleted && !darkMode,
-      'container-for-uncomplete-toDos-size primary-bg-color-on-dark-mode':
-        !toDosCompleted && darkMode,
-      'container-for-complete-toDos-size primary-bg-color-on-dark-mode':
-        toDosCompleted && darkMode,
+      'container-for-uncomplete-toDos-size': !toDosCompleted,
+      'container-for-complete-toDos-size ': toDosCompleted,
+      'primary-bg-color': !darkMode,
+      ' primary-bg-color-on-dark-mode': darkMode,
     }"
     class="container"
   >
@@ -47,11 +43,6 @@ export default {
       type: Boolean,
       required: true,
     },
-  },
-
-  methods: {
-    areToDosCompleted() {},
-    areToDosCompleted() {},
   },
 
   provide() {
