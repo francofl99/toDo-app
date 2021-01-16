@@ -49,6 +49,6 @@ export default {
 
 <style scoped lang="postcss">
 .input {
-  @apply h-1/2 w-1/2 shadow-md bg-gray-400 rounded-md text-gray-900;
+  @apply h-1/2 w-1/2 shadow-md bg-gray-300 rounded-md text-gray-700 font-semibold p-2;
 }
 </style>

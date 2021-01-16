@@ -46,6 +46,6 @@ export default {
 
 <style scoped lang="postcss">
 .card-body {
-  @apply w-full flex place-content-start h-1/2;
+  @apply w-full flex place-content-start h-1/2 px-2;
 }
 </style>
